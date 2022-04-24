@@ -1,8 +1,10 @@
 <?php
-require('db.php');
-$id=$_GET['id'];
-$sql="DELETE  FROM people WHERE ID=:id";
-$statement=$connection->prepare($sql);
- if($statement->execute([':id'=>$id])){
-     header('location:index.php');
- }
+require_once 'connect.php';
+
+$id = $_GET['id'];
+$SQLQuery = "DELETE  FROM people WHERE ID=:id";
+$statement = $connection->prepare($SQLQuery);
+
+if ($statement->execute([':id' => $id])) {
+    header('location:index.php');
+}
