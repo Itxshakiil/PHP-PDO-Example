@@ -39,7 +39,7 @@ CREATE TABLE `people` (
 --
 
 INSERT INTO `people` (`id`, `name`, `email`) VALUES
-(1, 'Shakil', 'itxshakiil@gmail.com');
+(1, 'Shakil', 'itxshakil@gmail.com');
 
 --
 -- Indexes for dumped tables
