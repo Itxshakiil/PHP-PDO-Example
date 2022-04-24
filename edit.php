@@ -2,10 +2,11 @@
 require_once 'connect.php';
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM people WHERE ID=:id";
+$sql = "SELECT * FROM people WHERE ID=:id LIMIT 1";
 $statement = $connection->prepare($sql);
 $statement->execute([':id' => $id]);
 $person = $statement->fetch(PDO::FETCH_OBJ);
+
 if (isset($_POST['name'], $_POST['email'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
